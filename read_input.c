@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:37:11 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/16 09:58:21 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/16 11:47:29 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_tetri	new_tetri(void)
 	t_tetri tetri;
 
 	if (!(tetri.block = (char *)malloc(sizeof(char) * 7)))
-		error("Execution error");
+		error();
 	return (tetri);
 }
 
@@ -38,7 +38,7 @@ void	read_input(const char *file, t_tetri *tetri_array)
 	nb_read = 0;
 	input = ft_strnew(21);
 	if (!(input_array = (char **)malloc(sizeof(char*) * 26)))
-		error("Execution error");
+		error();
 	while (i < 26)
 	{
 		input_array[i] = ft_strnew(21);
@@ -48,7 +48,7 @@ void	read_input(const char *file, t_tetri *tetri_array)
 	if ((fd = open(file, O_RDONLY)) == -1)
 	{
 		close_file(fd);
-		error("Execution error");
+		error();
 		exit(0);
 	}
 	while ((nb_read = read(fd, input, 21)) != 0)
