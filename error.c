@@ -6,27 +6,27 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 08:15:27 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/16 07:56:14 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/16 11:46:35 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void	error(char *message)
+void	error(void)
 {
-	ft_puterror(message);
+	ft_puterror("error");
 	ft_puterror("\n");
 }
 
 void	close_file(int fd)
 {
 	if (close(fd) == -1)
-		error("Execution error");
+		error();
 }
 
 void close_error(int fd)
 {
-	error("error: incorrect file");
+	error();
 	close_file(fd);
     exit(0);
 }
