@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:15 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/16 09:44:33 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/16 14:31:01 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,30 @@ static void	initialize_point(t_point *point, int x, int y)
 {
 	point[0].x = x;
 	point[0].y = y;
+}
+
+static void	find_min_max(char *block, t_point *pos, t_point *min, t_point *max)
+{
+	int i;
+
+	i = 0;
+	while (block[i] != '\0')
+	{
+		pos->x = i % 5;
+		pos->y = i / 5;
+		if (block[i] == '#')
+		{
+			if (min->x == -1)
+				min->x = pos->x;
+			if (min->y == -1)
+				min->y = pos->y;
+			if (pos->x > max->x)
+				max->x = pos->x;
+			if (pos->y > max->y)
+				max->y = pos->y;
+		}
+		i++;
+	}
 }
 
 /*
@@ -37,23 +61,7 @@ t_tetri		trim_tetri(char *block, t_tetri tetri)
 	initialize_point(&pos, 0, 0);
 	initialize_point(&max, 0, 0);
 	initialize_point(&min, -1, -1);
-	while (block[i] != '\0')
-	{
-		pos.x = i % 5;
-		pos.y = i / 5;
-		if (block[i] == '#')
-		{
-			if (min.x == -1)
-				min.x = pos.x;
-			if (min.y == -1)
-				min.y = pos.y;
-			if (pos.x > max.x)
-				max.x = pos.x;
-			if (pos.y > max.y)
-				max.y = pos.y;
-		}
-		i++;
-	}
+	find_min_max(block, &pos, &min, &max);
 	tetri.height = max.y - min.y + 1;
 	tetri.width = max.x - min.x + 1;
 	i = 0;
