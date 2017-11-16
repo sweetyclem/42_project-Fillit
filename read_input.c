@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:37:11 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/16 15:08:06 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/16 15:55:46 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	read_input(const char *file, t_tetri *tetri_array)
 		j++;
 		if (block_valid(input) == 1)
 		{
-			t = save_tetri(input, new_tetri());
+			t = get_tetri_pos(input, new_tetri());
 			tetri_array[i] = t;
 			i++;
 		}
@@ -96,11 +96,11 @@ void	read_input(const char *file, t_tetri *tetri_array)
 		ft_putnbr(tetri_array[j].two.x);
 		ft_putstr(", ");
 		ft_putnbr(tetri_array[j].two.y);
-		ft_putstr("/ pos # nb 3 :");
+		ft_putstr("\npos # nb 3 :");
 		ft_putnbr(tetri_array[j].three.x);
 		ft_putstr(", ");
 		ft_putnbr(tetri_array[j].three.y);
-		ft_putstr(" pos # nb 4 :");
+		ft_putstr("\npos # nb 4 :");
 		ft_putnbr(tetri_array[j].four.x);
 		ft_putstr(", ");
 		ft_putnbr(tetri_array[j].four.y);
