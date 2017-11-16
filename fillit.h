@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:43 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/16 10:32:19 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/16 14:51:17 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,22 @@
 # include <fcntl.h>
 # include "libft/libft.h"
 
-typedef struct	s_tetriminos
-{
-	int		width;
-	int		height;
-	char	*block;
-}				t_tetri;
-
 typedef struct	s_point
 {
 	int		x;
 	int		y;
 }				t_point;
 
+typedef struct	s_tetriminos
+{
+	t_point		two;
+	t_point		three;
+	t_point		four;
+	char		letter;
+}				t_tetri;
+
 void			read_input(const char *file, t_tetri *tetri_array);
-t_tetri			trim_tetri(char *block, t_tetri tetri);
+t_tetri			save_tetri(char *block, t_tetri tetri);
 int				block_valid(char *block);
 void			error();
 void			close_file(int fd);

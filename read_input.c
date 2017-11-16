@@ -6,18 +6,34 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:37:11 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/16 14:22:08 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/16 15:08:06 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
+t_point new_point(void)
+{
+	t_point point;
+
+	if (!(point.x = (int)malloc(sizeof(int))))
+		error();
+	if (!(point.y = (int)malloc(sizeof(int))))
+		error();
+	point.x = 0;
+	point.y = 0;
+	return (point);
+}
+
 t_tetri	new_tetri(void)
 {
 	t_tetri tetri;
 
-	if (!(tetri.block = (char *)malloc(sizeof(char) * 7)))
+	if (!(tetri.letter = (char)malloc(sizeof(char))))
 		error();
+	tetri.two = new_point();
+	tetri.three = new_point();
+	tetri.four = new_point();
 	return (tetri);
 }
 
@@ -62,7 +78,7 @@ void	read_input(const char *file, t_tetri *tetri_array)
 		j++;
 		if (block_valid(input) == 1)
 		{
-			t = trim_tetri(input, new_tetri());
+			t = save_tetri(input, new_tetri());
 			tetri_array[i] = t;
 			i++;
 		}
@@ -76,11 +92,18 @@ void	read_input(const char *file, t_tetri *tetri_array)
 	j = 0;
 	while (j < i)
 	{
-		ft_putstr(tetri_array[j].block);
-		ft_putstr(" : height ");
-		ft_putnbr(tetri_array[j].height);
-		ft_putstr(" , width ");
-		ft_putnbr(tetri_array[j].width);
+		ft_putstr("pos # nb 2 :");
+		ft_putnbr(tetri_array[j].two.x);
+		ft_putstr(", ");
+		ft_putnbr(tetri_array[j].two.y);
+		ft_putstr("/ pos # nb 3 :");
+		ft_putnbr(tetri_array[j].three.x);
+		ft_putstr(", ");
+		ft_putnbr(tetri_array[j].three.y);
+		ft_putstr(" pos # nb 4 :");
+		ft_putnbr(tetri_array[j].four.x);
+		ft_putstr(", ");
+		ft_putnbr(tetri_array[j].four.y);
 		ft_putstr("\n");
 		j++;
 	}
