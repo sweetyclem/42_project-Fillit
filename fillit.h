@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:43 by cpirlot           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2017/11/16 17:19:42 by yvillepo         ###   ########.fr       */
+=======
+/*   Updated: 2017/11/16 17:36:44 by cpirlot          ###   ########.fr       */
+>>>>>>> 814a5424feb0a270ef4d8ccd9c99b03e9ea9908d
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +49,7 @@ int				block_valid(char *block);
 void			error();
 void			close_file(int fd);
 void			close_error(int fd);
+void			tetri_list_add(t_tetri **begin_list, t_tetri *tetri);
+t_tetri			new_tetri(void);
 
 #endif

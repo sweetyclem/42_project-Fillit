@@ -15,7 +15,7 @@ CC = gcc
 FLAGS = -g -Wall -Wextra -Werror
 NAME = fillit
 LIBFT_DIR = libft
-SRC = main.c read_input.c validate.c error.c get_tetri_pos.c
+SRC = main.c read_input.c validate.c error.c get_tetri_pos.c utils.c
 OBJ = $(SRC:.c=.o)
 LIBFT = $(LIBFT_DIR)/libft.a
 
