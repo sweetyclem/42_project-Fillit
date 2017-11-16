@@ -6,13 +6,13 @@
 /*   By: yvillepo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 15:53:04 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/16 16:13:10 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/16 16:24:20 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static unsigned int	insert_tetri_pos(t_map map, t_tetri tetri,unsigned int x, unsigned int y)
+static unsigned int	insert_tetri_pos(t_map m, t_tetri tetri,unsigned int x, unsigned int y)
 {
 	if(m[x][y] =! '.')
 		return (0);
