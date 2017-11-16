@@ -5,36 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:44:04 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:44:05 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/07 16:06:43 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/13 17:06:32 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_atoi(const char *str)
+int					ft_atoi(const char *str)
 {
-	int i;
-	unsigned int res;
-	int neg;
+	unsigned int	res;
+	int				sign;
+	int				max;
+	const char		*s;
 
-	i = 0;
-	neg = 1;
+	sign = 1;
 	res = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i]  == 32)
-		i++;
-	if (str[i] == '-')
-	{
-		neg = -1;
-		i++;
-	}
-	else if (str[i] == '+' && neg != -1)
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	max = 0;
+	s = ft_skip_whitespace(str);
+	if (*s == '-' && s++)
+		sign = -1;
+	else if (*s == '+' && sign != -1)
+		s++;
+	while (*s >= '0' && *s <= '9')
 	{
 		res *= 10;
-		res += (str[i] - '0');
-		i++;
+		res += (*s++ - '0');
+		max++;
 	}
-	return (res * neg);
+	if (max > 18 && sign == 1)
+		return (-1);
+	if (max > 18 && sign == -1)
+		return (0);
+	return (res * sign);
 }

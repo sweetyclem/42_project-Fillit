@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:43:52 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:43:53 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/07 16:35:28 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/07 16:39:58 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 00 && c <= 127)
 		return (1);

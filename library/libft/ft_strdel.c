@@ -5,15 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:42:20 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:42:20 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 07:31:01 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/08 10:20:34 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_strdel(char **as)
+void	ft_strdel(char **as)
 {
+	if (!as)
+		return ;
 	free(*as);
 	*as = NULL;
 }

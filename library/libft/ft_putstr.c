@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:42:44 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:42:45 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 07:24:47 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/14 10:34:49 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void	ft_putstr(const char *str)
 {
-	int i;
+	int	i;
 
+	if (!str)
+		return ;
 	i = 0;
 	while (str[i] != '\0')
 	{

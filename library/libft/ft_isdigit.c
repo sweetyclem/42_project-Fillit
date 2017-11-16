@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:43:46 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:43:47 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/07 16:45:14 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/07 16:47:08 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if ((c >= '0') && (c <= '9'))
 		return (1);

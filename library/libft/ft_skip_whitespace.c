@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_skip_whitespace.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 09:15:04 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/08 09:15:15 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/13 16:25:53 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/13 16:26:44 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+const char	*ft_skip_whitespace(const char *str)
 {
-	size_t	i;
+	const char	*s;
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	s = str;
+	while ((*s >= 9 && *s <= 13) || *s == 32)
+		s++;
+	return (s);
 }

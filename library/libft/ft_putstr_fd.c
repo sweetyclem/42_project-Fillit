@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:42:40 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:42:41 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 07:24:05 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/08 08:42:12 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(const char *s, int fd)
+void	ft_putstr_fd(const char *s, int fd)
 {
 	int i;
 

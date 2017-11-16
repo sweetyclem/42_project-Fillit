@@ -5,20 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:44:00 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:44:01 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/07 16:07:26 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/07 16:40:47 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_bzero(void *pointer, size_t length)
+void	ft_bzero(void *pointer, size_t length)
 {
-	char *p;
-	size_t i;
+	char	*p;
+	size_t	i;
 
 	i = 0;
-	p = pointer;
+	p = (char*)pointer;
 	while (length--)
 	{
 		p[i] = 0;

@@ -5,18 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:43:38 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:43:38 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/07 17:01:18 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/13 07:44:02 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int  ft_len(int n)
+static int		ft_len(int n)
 {
 	int len;
 
-	len = 0;
+	len = 1;
 	if (n < 0)
 	{
 		len++;
@@ -27,13 +27,13 @@ static int  ft_len(int n)
 		n = n / 10;
 		len++;
 	}
-	return (len + 1);
+	return (len);
 }
 
-char        *ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	char    *s;
-	int     i;
+	char	*s;
+	int		i;
 
 	i = ft_len(n) - 1;
 	if (n == -2147483648)

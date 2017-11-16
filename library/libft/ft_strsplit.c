@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:41:19 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:41:20 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 09:23:05 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/08 11:17:41 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t     nbWords(const char *s, char c)
+static size_t	nb_words(const char *s, char c)
 {
-	size_t i;
-	size_t nbwords;
+	size_t	i;
+	size_t	nbwords;
 
 	i = 0;
 	nbwords = 0;
@@ -23,7 +23,7 @@ static size_t     nbWords(const char *s, char c)
 	{
 		if (s[i] != c)
 		{
-			if (s[i -1] == c || i == 0)
+			if (s[i - 1] == c || i == 0)
 			{
 				nbwords++;
 			}
@@ -33,14 +33,16 @@ static size_t     nbWords(const char *s, char c)
 	return (nbwords);
 }
 
-char            **ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	size_t      nb_words;
-	char        *start;
-	char        **result;
+	size_t	words;
+	char	*start;
+	char	**result;
 
-	nb_words = nbWords((char *)s, c);
-	if (!(result = (char **)malloc(sizeof(char *) * (nb_words + 1))))
+	if (!s)
+		return (0);
+	words = nb_words((char *)s, c);
+	if (!(result = (char **)malloc(sizeof(char *) * (words + 1))))
 		return (NULL);
 	start = (char *)s;
 	while (*s)
@@ -56,5 +58,5 @@ char            **ft_strsplit(char const *s, char c)
 	if (start != s)
 		*(result++) = ft_strsub(start, 0, s - start);
 	*result = NULL;
-	return (result - nb_words);
+	return (result - words);
 }

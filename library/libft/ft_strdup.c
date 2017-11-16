@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -6,18 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:42:17 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:42:18 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 07:31:48 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/08 07:32:51 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strdup (const char *str)
+char	*ft_strdup(const char *str)
 {
-	char    *dest;
+	int		i;
+	char	*dest;
 
-	dest = (char *)malloc(sizeof(char) *(ft_strlen(str) + 1));
+	i = 0;
+	dest = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
 	if (dest)
 	{
 		ft_strcpy(dest, str);

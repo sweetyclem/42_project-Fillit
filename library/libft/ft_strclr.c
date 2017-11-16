@@ -5,17 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:42:31 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:42:32 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 07:29:16 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/08 11:24:35 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void   ft_strclr(char *s)
+void	ft_strclr(char *s)
 {
-	int    i;
+	int	i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i] != '\0')
 	{

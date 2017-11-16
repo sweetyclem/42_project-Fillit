@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:42:53 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:42:54 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 07:23:25 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/08 07:23:33 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putnbr(int nbr)
+void	ft_putnbr(int nbr)
 {
 	unsigned int nb;
 

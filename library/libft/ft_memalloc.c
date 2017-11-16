@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:43:34 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:43:35 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/07 17:19:17 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/07 17:19:37 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memalloc(size_t size)
+void	*ft_memalloc(size_t size)
 {
 	void *tmp;
 

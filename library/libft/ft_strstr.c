@@ -5,17 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:41:16 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:41:17 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 09:30:20 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/08 09:30:29 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strstr(const char *s1, const char *s2)
+char	*ft_strstr(const char *s1, const char *s2)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;

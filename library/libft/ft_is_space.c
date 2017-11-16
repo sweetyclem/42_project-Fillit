@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_is_space.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 09:15:04 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/08 09:15:15 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/14 10:36:38 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/14 12:46:56 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+bool	ft_is_space(char c)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	if (c == ' ' || c == '\n' || c == '\t')
+		return (true);
+	return (false);
 }

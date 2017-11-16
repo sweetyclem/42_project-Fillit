@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:43:41 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:43:41 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/07 17:00:33 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/07 17:00:48 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c < 127)
 		return (1);

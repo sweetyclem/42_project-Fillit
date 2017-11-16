@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_puterror.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 09:15:04 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/08 09:15:15 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 07:22:09 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/08 07:22:12 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_puterror(char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
+		write(2, &str[i], 1);
 		i++;
 	}
-	return (i);
 }

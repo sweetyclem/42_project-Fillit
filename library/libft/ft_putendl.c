@@ -5,17 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/26 09:42:57 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:42:57 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/08 07:21:19 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/14 10:35:25 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_putendl(const char *s)
+void	ft_putendl(const char *s)
 {
 	int i;
 
+	if (!s)
+		return ;
 	i = 0;
 	while (s[i])
 	{
