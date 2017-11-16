@@ -6,11 +6,7 @@
 /*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:43 by cpirlot           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2017/11/16 16:45:21 by yvillepo         ###   ########.fr       */
-=======
-/*   Updated: 2017/11/16 16:33:44 by cpirlot          ###   ########.fr       */
->>>>>>> e775d6e544371ed5359303e365ec7fe4a12af997
+/*   Updated: 2017/11/16 17:05:55 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +36,7 @@ typedef struct	s_tetriminos
 typedef struct	s_map
 {
 	int			size;
-<<<<<<< HEAD
 	char		**map;
-=======
-	char		**m;
->>>>>>> e775d6e544371ed5359303e365ec7fe4a12af997
 }				t_map;
 
 void			read_input(const char *file, t_tetri *tetri_array);
