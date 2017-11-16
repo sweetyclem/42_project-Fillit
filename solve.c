@@ -3,11 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   solve.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvillepo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 16:14:42 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/16 16:17:36 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/16 17:48:56 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void solve(
+#include "fillit.h"
+
+int     solve(t_map map, t_tetri ltetri)
+{
+    while (ltetri.next)
+    {
+        if(!(insert_tetri(map, ltetri)))
+        {
+            
+        }
+    }
+}

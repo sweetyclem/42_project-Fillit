@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   insert_tetri.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvillepo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 15:53:04 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/16 16:24:20 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/16 17:48:52 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 static unsigned int	insert_tetri_pos(t_map m, t_tetri tetri,unsigned int x, unsigned int y)
 {
-	if(m[x][y] =! '.')
+	if(m.map[x][y] =! '.')
 		return (0);
-	if(m[x + tetri.two.x][y + tetri.two.y] =! '.')
+	if(m.map[x + tetri.two.x][y + tetri.two.y] =! '.')
 		return (0);
-	if(m[x + tetri.three.x][y + tetri.three.y] =! '.')
+	if(m.map[x + tetri.three.x][y + tetri.three.y] =! '.')
 		return (0);
-	if(m[x + tetri.four.x][y + tetri.four.y] =! '.')
+	if(m.map[x + tetri.four.x][y + tetri.four.y] =! '.')
 		return (0);
-	m[x][y] = tetri.letter;
-	m[x+tetri.two.x][y+tetri.two.y] = tetri.letter;
-	m[x+tetri.tree.x][y+tetri.tree.y] = tetri.letter;
-	m[x+tetri.four.x][y+tetri.four.y] = tetri.letter;
+	m.map[x][y] = tetri.letter;
+	m.map[x+tetri.two.x][y+tetri.two.y] = tetri.letter;
+	m.map[x+tetri.three.x][y+tetri.three.y] = tetri.letter;
+	m.map[x+tetri.four.x][y+tetri.four.y] = tetri.letter;
 	return (1);
 }
 
-void	insert_tetri(t_map map, t_tetri tetri)
+unsigned int		insert_tetri(t_map map, t_tetri tetri)
 {
 	unsigned int	x;
 	unsigned int	y;
