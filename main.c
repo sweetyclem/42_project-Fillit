@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/06 08:15:27 by cpirlot          #+#    #+#              */
-/*   Updated: 2017/10/24 17:18:05 by cpirlot         ###   ########.fr        */
+/*   Created: 2017/11/16 09:36:28 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/16 09:37:53 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int	main(int argc, char **argv)
 {
-	//int 	i;
 	t_tetri	*tetri_array;
 
-	//i = 0;
-    if (argc != 2)
+	if (argc != 2)
 	{
 		ft_putstr("usage: ./fillit input_file\n");
 		return (1);
@@ -36,6 +34,5 @@ int	main(int argc, char **argv)
 		}
 		free(tetri_array); */
 	}
-
 	return (0);
 }

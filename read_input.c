@@ -5,37 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/06 08:15:27 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/16 09:11:31 by cpirlot          ###   ########.fr       */
+/*   Created: 2017/11/16 09:37:11 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/16 09:58:21 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static t_tetri new_tetri()
+t_tetri	new_tetri(void)
 {
-    t_tetri tetri;
+	t_tetri tetri;
 
-    if (!(tetri.block = (char *)malloc(sizeof(char) * 7)))
-        error("Execution error");
-    return(tetri);
+	if (!(tetri.block = (char *)malloc(sizeof(char) * 7)))
+		error("Execution error");
+	return (tetri);
 }
-
-/* Read from the input file block by block (20 char + \0) */
-
-/* ####### SUPPRIMER ####### */
-/* ####### SEGFAULT IF FILE EMPTY ####### */
-/* ####### SUPPRIMER ####### */
 
 void	read_input(const char *file, t_tetri *tetri_array)
 {
 	char	*input;
 	char	**input_array;
 	int		fd;
-    int     nb_blocks;
-    int     nb_read;
+	int		nb_blocks;
+	int		nb_read;
 	int		i;
-	int 	j;
+	int		j;
 	t_tetri	t;
 
 	i = 0;
@@ -44,7 +38,7 @@ void	read_input(const char *file, t_tetri *tetri_array)
 	nb_read = 0;
 	input = ft_strnew(21);
 	if (!(input_array = (char **)malloc(sizeof(char*) * 26)))
-			error("Execution error");
+		error("Execution error");
 	while (i < 26)
 	{
 		input_array[i] = ft_strnew(21);
@@ -55,37 +49,35 @@ void	read_input(const char *file, t_tetri *tetri_array)
 	{
 		close_file(fd);
 		error("Execution error");
-        exit(0);
+		exit(0);
 	}
-	
-	while ((nb_read = read(fd, input, 21)) != 0 )
+	while ((nb_read = read(fd, input, 21)) != 0)
 	{
-        nb_blocks++;
-        if (nb_blocks > 26)
-            close_error(fd);
-	    if (nb_read != 21 && nb_read != 20)
-		 	close_error(fd);
+		nb_blocks++;
+		if (nb_blocks > 26)
+			close_error(fd);
+		if (nb_read != 21 && nb_read != 20)
+			close_error(fd);
 		if (nb_read == 20)
-	     	input[20] = '\0';
-		if (nb_read == 21 && (input[20] != '\n' &&
-		 input[20] != '\0'))
-	     	close_error(fd);
+			input[20] = '\0';
+		if (nb_read == 21 && (input[20] != '\n' && input[20] != '\0'))
+			close_error(fd);
 		input_array[j] = ft_strdup(input);
 		j++;
-	    if (block_valid(input) == 1)
+		if (block_valid(input) == 1)
 		{
 			t = trim_tetri(input, new_tetri());
 			tetri_array[i] = t;
 			i++;
 		}
-        else
-            close_error(fd);
+		else
+			close_error(fd);
 	}
 	if (input_array[nb_blocks - 1][20] != '\0')
-			close_error(fd);
-	close_file(fd);	
+		close_error(fd);
+	close_file(fd);
 /* ####### SUPPRIMER ####### */
-	j = 0;	
+	j = 0;
 	while (j < i)
 	{
 		ft_putstr(tetri_array[j].block);
