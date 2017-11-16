@@ -6,36 +6,11 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:37:11 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/16 15:55:46 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/16 16:34:53 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
-t_point new_point(void)
-{
-	t_point point;
-
-	if (!(point.x = (int)malloc(sizeof(int))))
-		error();
-	if (!(point.y = (int)malloc(sizeof(int))))
-		error();
-	point.x = 0;
-	point.y = 0;
-	return (point);
-}
-
-t_tetri	new_tetri(void)
-{
-	t_tetri tetri;
-
-	if (!(tetri.letter = (char)malloc(sizeof(char))))
-		error();
-	tetri.two = new_point();
-	tetri.three = new_point();
-	tetri.four = new_point();
-	return (tetri);
-}
 
 void	read_input(const char *file, t_tetri *tetri_array)
 {
