@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:43 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/16 16:33:44 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/16 17:31:25 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ int				block_valid(char *block);
 void			error();
 void			close_file(int fd);
 void			close_error(int fd);
+void			tetri_list_add(t_tetri **begin_list, t_tetri *tetri);
+t_tetri			new_tetri(void);
 
 #endif
