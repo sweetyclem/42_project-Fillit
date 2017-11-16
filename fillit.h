@@ -6,16 +6,17 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 09:40:53 by cpirlot           #+#    #+#             */
-/*   Updated: 2016/11/26 09:40:55 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/16 08:00:02 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
-# include "libft.h"
+
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include "libft/libft.h"
 
 typedef struct  s_tetriminos 
 {

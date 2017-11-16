@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 			free(tetri_array);
 		}
 		free(tetri_array); */
-	}	
+	}
 
 	return (0);
 }

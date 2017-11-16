@@ -12,27 +12,52 @@
 #* ************************************************************************** *#
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -g -Wall -Wextra -Werror
 NAME = fillit
-LIB = library/libft
-SRC = src
-FILES = $(SRC)/main.c $(SRC)/read_input.c $(SRC)/validate.c $(SRC)/error.c\
-	$(SRC)/trim_tetri.c
+LIBFT_DIR = libft
+SRC = main.c read_input.c validate.c error.c trim_tetri.c
+OBJ = $(SRC:.c=.o)
+LIBFT = $(LIBFT_DIR)/libft.a
 
-TMP = Makefile~  $(SRC)/fillit.h~ $(NAME)~ $(FILES:.c=.c~)
+# PROGRESS BAR
+T = $(words $(OBJ))
+N = 0
+C = $(words $N)$(eval N := x $N)
+ECHO = "[`expr $C  '*' 100 / $T`%]"
 
-all : $(NAME)
+#Colors
+_GREY=\x1b[30m
+_RED=\x1b[31m
+_GREEN=\x1b[32m
+_YELLOW=\x1b[33m
+_BLUE=\x1b[34m
+_PURPLE=\x1b[35m
+_CYAN=\x1b[36m
+_WHITE=\x1b[37m
+_END=\x1b[0m
 
-$(NAME) :
-	@echo Project $(NAME)
-	@$(CC) -o $(NAME) $(FLAGS) $(FILES) -I $(LIB) -L $(LIB) -lft
+all: $(NAME)
 
-clean :
-	@echo clean :"\n\tTemporary files deteleted"
-	@rm -f $(TMP)
+$(NAME): $(LIBFT) $(OBJ)
+	@echo "\n$(NAME) compilation : $(_CYAN)done$(_END)"
+	@$(CC) -o $(NAME) $(OBJ) -L$(LIBFT_DIR) -lft
 
-fclean : clean
-	@echo fclean :"\n\tExec file deleted"
-	@rm -f $(NAME)
+%.o: %.c
+	@printf "%-60b\r" "$(ECHO) $(_CYAN) Compiling $@ $(_END)"
+	@$(CC) $(FLAGS) -c $<
 
-re : fclean all
+$(LIBFT):
+	@make -C $(LIBFT_DIR)
+
+clean:
+	@$(RM) -f $(OBJ)
+	@echo "clean: $(_CYAN)done$(_END)"
+	@make fclean -C $(LIBFT_DIR)
+
+fclean: clean
+	@$(RM) -f $(NAME)
+	@echo "fclean: $(_CYAN)done$(_END)"
+
+re: fclean all
+
+.PHONY: all clean fclean re
