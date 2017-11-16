@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/06 08:15:27 by cpirlot          #+#    #+#              */
-/*   Updated: 2017/10/24 17:18:05 by cpirlot         ###   ########.fr        */
+/*   Created: 2017/07/06 08:15:27 by cpirlot           #+#    #+#             */
+/*   Updated: 2017/11/16 09:11:31 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,6 @@ static t_tetri new_tetri()
     if (!(tetri.block = (char *)malloc(sizeof(char) * 7)))
         error("Execution error");
     return(tetri);
-}
-
-static int	already_there(t_tetri tetri, t_tetri *tetri_array, int size)
-{
-	int i;
-
-	i = 0;
-	if (size == 0)
-		return(0);
-	while (i < size)
-	{
-		if (ft_strcmp(tetri.block, tetri_array[i].block) == 0 &&
-			(tetri.width == tetri_array[i].width &&
-			tetri.height == tetri_array[i].height))
-			return(1);
-		i++;
-	}
-	return(0);
 }
 
 /* Read from the input file block by block (20 char + \0) */
@@ -93,11 +75,8 @@ void	read_input(const char *file, t_tetri *tetri_array)
 	    if (block_valid(input) == 1)
 		{
 			t = trim_tetri(input, new_tetri());
-			if (already_there(t, tetri_array, i) == 0)
-			{
-				tetri_array[i] = t;
-				i++;
-			}
+			tetri_array[i] = t;
+			i++;
 		}
         else
             close_error(fd);
@@ -110,12 +89,10 @@ void	read_input(const char *file, t_tetri *tetri_array)
 	while (j < i)
 	{
 		ft_putstr(tetri_array[j].block);
-		ft_putstr(" : ");
+		ft_putstr(" : height ");
 		ft_putnbr(tetri_array[j].height);
-		ft_putstr(" ");
+		ft_putstr(" , width ");
 		ft_putnbr(tetri_array[j].width);
-		ft_putstr(" block at index ");
-		ft_putnbr(j);
 		ft_putstr("\n");
 		j++;
 	}
