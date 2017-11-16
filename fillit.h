@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:43 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/16 09:46:50 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/16 10:32:19 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct	s_point
 void			read_input(const char *file, t_tetri *tetri_array);
 t_tetri			trim_tetri(char *block, t_tetri tetri);
 int				block_valid(char *block);
-void			error(char *message);
+void			error();
 void			close_file(int fd);
 void			close_error(int fd);
 
