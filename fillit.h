@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:43 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/16 14:51:17 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/16 15:51:17 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ typedef struct	s_tetriminos
 	t_point		four;
 	char		letter;
 }				t_tetri;
+
+typedef struct	s_map
+{
+	int			size;
+	char		**m;
+}				t_map
 
 void			read_input(const char *file, t_tetri *tetri_array);
 t_tetri			save_tetri(char *block, t_tetri tetri);
