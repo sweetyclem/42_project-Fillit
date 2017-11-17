@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:15 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/17 12:32:59 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/17 12:44:30 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,11 @@ int		fill_struct(t_tetri *t, int pound_pos, int i, int index_first)
 	return (pound_pos + 1);
 }
 
-t_tetri	get_tetri_pos(char *block, t_tetri tetri)
+t_tetri	get_tetri_pos(char *block, t_tetri tetri, int i)
 {
-	int		i;
 	int		index_first;
 	int		nb_pounds;
 
-	i = 0;
 	nb_pounds = 0;
 	index_first = -1;
 	while (block[i] != '\0')
