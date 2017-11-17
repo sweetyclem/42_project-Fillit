@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:37:11 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/17 12:44:08 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/17 16:10:31 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int 	go_through_input(char	*input, char **input_array, t_tetri *tetri_list,
 		{
 			t = get_tetri_pos(input, new_tetri(), 0);
 			/* ####### SUPPRIMER ####### */
-			ft_putstr("NEW BLOCK\n");
+			ft_putstr("NEW BLOCK number ");
+			ft_putnbrendl(nb_blocks);
 			ft_putstr("pos # nb 2 :");
 			ft_putnbr(t.two.x);
 			ft_putstr(", ");
