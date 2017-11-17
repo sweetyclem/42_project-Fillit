@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:15 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/17 09:50:20 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/17 12:32:59 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_tetri	get_tetri_pos(char *block, t_tetri tetri)
 	index_first = -1;
 	while (block[i] != '\0')
 	{
-		if (block[i++] == '#')
+		if (block[i] == '#')
 		{
 			if (index_first == -1)
 			{
@@ -57,6 +57,7 @@ t_tetri	get_tetri_pos(char *block, t_tetri tetri)
 			else if (nb_pounds == 3)
 				nb_pounds = fill_struct(&tetri, nb_pounds, i, index_first);
 		}
+		i++;
 	}
 	return (tetri);
 }
