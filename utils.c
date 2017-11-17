@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 16:34:57 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/16 17:35:11 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/17 08:51:44 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ t_tetri	*new_tetri_list(void)
 {
 	t_tetri *list;
 
-	if (!(list = (t_tetri *)malloc(sizeof(list))))
-		error();
+	if (!(list = (t_tetri*)malloc(sizeof(t_tetri))))
+		return (NULL);
 	if (!(list->letter = (char)malloc(sizeof(char))))
 		error();
 	list->two = new_point();
@@ -53,17 +53,15 @@ t_tetri	new_tetri(void)
 	return (tetri);
 }
 
-void		tetri_list_add(t_tetri **begin_list, t_tetri *tetri)
+void	tetri_list_add(t_tetri **begin_list, t_tetri *tetri)
 {
 	t_tetri	*tmp;
 
-	if (begin_list && *begin_list)
+	tmp = *begin_list;
+	if (*begin_list)
 	{
-		tmp = *begin_list;
 		while (tmp->next)
 			tmp = tmp->next;
 		tmp->next = tetri;
 	}
-	else
-		*begin_list = new_tetri_list();
 }

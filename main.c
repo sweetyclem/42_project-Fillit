@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:28 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/16 16:34:18 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/17 08:50:03 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int	main(int argc, char **argv)
 	}
 	else if (argc == 2)
 	{
-		if (!(tetri_list = (t_tetri *)malloc(sizeof(t_tetri) * 26)))
-			return (1);
+		tetri_list = new_tetri_list();
 		read_input(argv[1], tetri_list);
 		/*
 		while (i <= 25)

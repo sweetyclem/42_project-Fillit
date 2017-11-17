@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:43 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/16 17:36:44 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/17 08:50:22 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct	s_map
 	char		**map;
 }				t_map;
 
-void			read_input(const char *file, t_tetri *tetri_array);
+void			read_input(const char *file, t_tetri *tetri_list);
 t_tetri			get_tetri_pos(char *block, t_tetri tetri);
 int				block_valid(char *block);
 void			error();
@@ -47,5 +47,6 @@ void			close_file(int fd);
 void			close_error(int fd);
 void			tetri_list_add(t_tetri **begin_list, t_tetri *tetri);
 t_tetri			new_tetri(void);
+t_tetri			*new_tetri_list(void);
 
 #endif
