@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:43 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/17 08:56:34 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/17 09:19:34 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,4 @@ void			tetri_list_add(t_tetri **begin_list, t_tetri *tetri);
 t_tetri			new_tetri(void);
 t_tetri			*new_tetri_list(void);
 unsigned int	insert_tetri(t_map map, t_tetri tetri);
-
 #endif
