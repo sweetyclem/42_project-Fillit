@@ -6,13 +6,13 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 16:34:57 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/17 08:51:44 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/17 09:51:44 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-t_point new_point(void)
+t_point	new_point(void)
 {
 	t_point point;
 
