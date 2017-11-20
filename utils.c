@@ -3,60 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 16:34:57 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/20 15:15:07 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/19 16:01:45 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-t_point	new_point(void)
+t_tetri	*new_tetri(void)
 {
-	t_point point;
+	t_tetri *tetri;
 
-	if (!(point.x = (int)malloc(sizeof(int))))
-		error();
-	if (!(point.y = (int)malloc(sizeof(int))))
-		error();
-	point.x = 0;
-	point.y = 0;
-	return (point);
-}
-
-t_tetri	*new_tetri_list(void)
-{
-	t_tetri *list;
-
-	if (!(list = (t_tetri*)malloc(sizeof(t_tetri))))
+	if(!(tetri = (t_tetri*)malloc(sizeof(*tetri))))
 		return (NULL);
-	list->letter = '\0';
-	list->two = new_point();
-	list->three = new_point();
-	list->four = new_point();
-	list->next = NULL;
-	return (list);
-}
-
-t_tetri	new_tetri(void)
-{
-	t_tetri tetri;
-
-	tetri.letter = '\0';
-	tetri.two = new_point();
-	tetri.three = new_point();
-	tetri.four = new_point();
-	tetri.next = NULL;
+	tetri->letter = 0;
+	tetri->next = NULL;
 	return (tetri);
 }
 
-void	tetri_list_add(t_tetri *begin_list, t_tetri *tetri)
+void	tetri_list_add(t_tetri **begin_list, t_tetri *tetri)
 {
 	t_tetri	*tmp;
 
-	tmp = begin_list;
-	if (begin_list)
+	tmp = *begin_list;
+	if (*begin_list)
 	{
 		while (tmp->next)
 			tmp = tmp->next;

@@ -12,11 +12,11 @@
 #* ************************************************************************** *#
 
 CC = gcc
-#FLAGS = -g -Wall -Wextra -Werror
+#FLAGS = -g -Wall -Wextra 
 NAME = fillit
 LIBFT_DIR = libft
-SRC = allo.c assign_letters.c error.c get_pos.c insert_tetri.c main.c \
-read_input.c solve.c utils.c validate.c
+SRC = main.c read_input.c validate.c error.c get_tetri_pos.c utils.c \
+	  allo.c insert_tetri.c solve.c
 OBJ = $(SRC:.c=.o)
 LIBFT = $(LIBFT_DIR)/libft.a
 
