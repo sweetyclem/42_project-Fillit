@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 08:15:27 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/17 11:09:48 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/20 07:12:44 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	close_file(int fd)
 void	close_error(int fd)
 {
 	error();
-	close_file(fd);
+	if (fd > 0)
+		close_file(fd);
 	exit(0);
 }
