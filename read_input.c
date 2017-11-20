@@ -6,37 +6,42 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:37:11 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/20 07:12:12 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/20 08:28:33 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-int 	go_through_input(char	*input, char **input_array, t_tetri *tetri_list,
+
+char	*check_input(int nb_blocks, char *input, int fd, int nb_read)
+{
+	if (nb_blocks > 26)
+		close_error(fd);
+	if (nb_read != 21 && nb_read != 20)
+		close_error(fd);
+	if (nb_read == 20)
+		input[20] = '\0';
+	if (nb_read == 21 && (input[20] != '\n' && input[20] != '\0'))
+		close_error(fd);
+	return (input);
+}
+
+int		go_through_input(char *input, char **input_array, t_tetri *tetri_list,
 	int fd)
 {
 	int		nb_blocks;
 	int		nb_read;
 	int		i;
-	int j;
 	t_tetri	t;
 
 	i = 0;
-	j = 0;
 	nb_blocks = 0;
 	nb_read = 0;
 	while ((nb_read = read(fd, input, 21)) > 0)
 	{
 		nb_blocks++;
-		if (nb_blocks > 26)
-			close_error(fd);
-		if (nb_read != 21 && nb_read != 20)
-			close_error(fd);
-		if (nb_read == 20)
-			input[20] = '\0';
-		if (nb_read == 21 && (input[20] != '\n' && input[20] != '\0'))
-			close_error(fd);
-		input_array[j] = ft_strdup(input);
-		j++;
+		input = check_input(nb_blocks, input, fd, nb_read);
+		input_array[i] = ft_strdup(input);
+		i++;
 		if (block_valid(input) == 1)
 		{
 			t = get_tetri_pos(input, new_tetri(), 0);
@@ -56,10 +61,9 @@ int 	go_through_input(char	*input, char **input_array, t_tetri *tetri_list,
 			ft_putstr(", ");
 			ft_putnbr(t.four.y);
 			ft_putstr("\n");
-		/* ####### SUPPRIMER ####### */
+			/* ####### SUPPRIMER ####### */
 			tetri_list_add(&tetri_list, &t);
 			(void)tetri_list;
-			i++;
 		}
 		else
 			close_error(fd);
