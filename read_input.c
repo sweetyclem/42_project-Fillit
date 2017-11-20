@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_input.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:37:11 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/19 16:06:59 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/20 15:42:39 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,26 +39,8 @@ int 	go_through_input(char	*input, char **input_array, t_tetri *tetri_list,
 		j++;
 		if (block_valid(input) == 1)
 		{
-			t = get_tetri_pos(input, new_tetri(), 0);
-			
-			ft_putstr("NEW BLOCK number ");
-			ft_putnbrendl(nb_blocks);
-			ft_putstr("pos # nb 2 :");
-			ft_putnbr(t->two.x);
-			ft_putstr(", ");
-			ft_putnbr(t->two.y);
-			ft_putstr("\npos # nb 3 :");
-			ft_putnbr(t->three.x);
-			ft_putstr(", ");
-			ft_putnbr(t->three.y);
-			ft_putstr("\npos # nb 4 :");
-			ft_putnbr(t->four.x);
-			ft_putstr(", ");
-			ft_putnbr(t->four.y);
-			ft_putstr("\n");
-			
+			t = get_tetri_pos(input, new_tetri(), 0);			
 			t->letter = 'A' + nb_blocks - 1;
-//			ft_putchar(t->letter);
 			tetri_list_add(&tetri_list, t);
 			i++;
 		}
