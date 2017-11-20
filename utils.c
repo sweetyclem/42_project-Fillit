@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 16:34:57 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/17 16:14:00 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/20 13:40:44 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_tetri	*new_tetri_list(void)
 
 	if (!(list = (t_tetri*)malloc(sizeof(t_tetri))))
 		return (NULL);
-	list->letter = 0;
+	list->letter = '\0';
 	list->two = new_point();
 	list->three = new_point();
 	list->four = new_point();
@@ -43,7 +43,7 @@ t_tetri	new_tetri(void)
 {
 	t_tetri tetri;
 
-	tetri.letter = 0;
+	tetri.letter = '\0';
 	tetri.two = new_point();
 	tetri.three = new_point();
 	tetri.four = new_point();
