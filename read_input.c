@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:37:11 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/20 07:01:40 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/20 07:12:12 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int 	go_through_input(char	*input, char **input_array, t_tetri *tetri_list,
 	j = 0;
 	nb_blocks = 0;
 	nb_read = 0;
-	while ((nb_read = read(fd, input, 21)) != 0)
+	while ((nb_read = read(fd, input, 21)) > 0)
 	{
 		nb_blocks++;
 		if (nb_blocks > 26)
@@ -78,7 +78,7 @@ void	read_input(const char *file, t_tetri *tetri_list)
 	i = 0;
 	input = ft_strnew(21);
 	if (!(input_array = (char **)malloc(sizeof(char*) * 26)))
-		error();
+		close_error(0);
 	while (i < 26)
 	{
 		input_array[i] = ft_strnew(21);
