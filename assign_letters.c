@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   assign_letters.c                                   :+:      :+:    :+:   */
+/*   assign_letterss.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "fillit.h"
 
-t_tetri	*assign_letter(t_tetri *tetri_list)
+t_tetri	*assign_letters(t_tetri *tetri_list)
 {
 	char	c;
 	t_tetri	*tmp;
