@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:37:11 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/20 13:47:57 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/20 14:10:53 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int		go_through_input(char *input, char **input_array, t_tetri *tetri_list,
 		{
 			t = get_pos(input, new_tetri(), 0);
 			tetri_list_add(&tetri_list, &t);
-			(void)tetri_list;
 		}
 		else
 			close_error(fd);
