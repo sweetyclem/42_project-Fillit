@@ -6,23 +6,12 @@
 /*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 16:14:42 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/19 17:44:34 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/20 22:17:35 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 #include <stdio.h>
-
-static	unsigned int	map_min(unsigned int nb_tetri)
-{
-	unsigned int	size_map;
-
-	size_map = 0;
-	nb_tetri = nb_tetri * 4;
-	while (size_map * size_map < nb_tetri)
-		size_map++;;
-	return(size_map);
-}
 
 static t_map	*solve_map(t_map *map, t_tetri *ltetri)
 {
@@ -41,24 +30,27 @@ static t_map	*solve_map(t_map *map, t_tetri *ltetri)
 		{
 			retire_tetri(map, ltetri, x, y);
 			x++;
+			if (x >= map->size)
+			{
+				x = 0;
+				y++;
+			}
 		}
-	}
-	free_map(map);
+	}	
 	return (0);
 }
 
 t_map	*solve(t_tetri *ltetri, unsigned int nb_tetri)
 {
 	t_map			*m;
-	unsigned int	m_size;
+	int	m_size;
 
-	m_size = map_min(nb_tetri);
-	m = map_new(nb_tetri);
-	ft_putchar('\n');
+	m = map_min(nb_tetri);
+	m_size = m->size;
 	while (!(m = solve_map(m, ltetri)))
 	{
-		free_map(m);
-		map_new(++m_size);
+		m = map_new(++m_size);		
 	}
+	print_map(m);
 	return (m);
 }

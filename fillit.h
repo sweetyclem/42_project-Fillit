@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:43 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/20 15:49:35 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/20 22:05:14 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ unsigned int			insert_tetri(t_map *map, t_tetri *tetri, int *x, int *y);
 void					retire_tetri(t_map *m, t_tetri *tetri, int x, int y);
 void					free_map(t_map *map);
 void					print_map(t_map *map);
-t_map					*map_new(int size);
+t_map					*map_min(unsigned int nb_tetri);
 t_map					*solve(t_tetri *ltetri, unsigned int nb_tetri);
 void					affiche(t_tetri *tetri);
+void					grow_map(t_map **map);
+t_map					*map_new(int size);
 #endif

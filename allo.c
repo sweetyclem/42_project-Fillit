@@ -6,27 +6,23 @@
 /*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 16:36:59 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/19 17:09:59 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/20 22:05:03 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 #include "libft/libft.h"
 
-void	free_map(t_map *map)
+static int	size_map(unsigned int nb_tetri)
 {
-	int i;
+	unsigned int	size_map;
 
-	i = 0;
-	while (i < map->size)
-	{
-		ft_memdel((void **)&(map->map[i]));
-		i++;
-	}
-	ft_memdel((void **)&(map->map));
-	ft_memdel((void **)&map);
+	size_map = 0;
+	nb_tetri = nb_tetri * 4;
+	while (size_map * size_map < nb_tetri)
+		size_map++;;
+	return(size_map);
 }
-
 
 void	print_map(t_map *map)
 {
@@ -48,6 +44,20 @@ void	print_map(t_map *map)
 	}
 }
 
+void	free_map(t_map *map)
+{
+	int i;
+
+	i = 0;
+	while (i < map->size)
+	{
+		ft_memdel((void **)&(map->map[i]));
+		i++;
+	}
+	ft_memdel((void **)&(map->map));
+	ft_memdel((void **)&map);
+}
+
 t_map	*map_new(int size)
 {
 	t_map	*map;
@@ -65,4 +75,21 @@ t_map	*map_new(int size)
 		ft_memset(map->map[i], '.', size);
 	}
 	return (map);
+}
+
+t_map					*map_min(unsigned int nb_tetri)
+{
+	int		size;
+
+	size = size_map(nb_tetri);
+	return (map_new(size));
+}
+
+void					grow_map(t_map **map)
+{
+	int		size;
+
+	size = (*map)->size;
+	free_map(*map);
+	*map = map_new(size + 1);
 }
