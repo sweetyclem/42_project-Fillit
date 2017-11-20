@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:28 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/19 17:41:17 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/20 13:57:49 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	}
 	else if (argc == 2)
 	{
-		tetri_list = new_tetri();
+		tetri_list = new_tetri_list();
 		nb_tetri = read_input(argv[1], tetri_list);
 		tetri_list = tetri_list->next;
 		/*while(tetri_list)

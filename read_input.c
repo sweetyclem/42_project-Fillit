@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:37:11 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/20 08:28:33 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/20 14:10:53 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,26 +44,8 @@ int		go_through_input(char *input, char **input_array, t_tetri *tetri_list,
 		i++;
 		if (block_valid(input) == 1)
 		{
-			t = get_tetri_pos(input, new_tetri(), 0);
-			/* ####### SUPPRIMER ####### */
-			ft_putstr("NEW BLOCK number ");
-			ft_putnbrendl(nb_blocks);
-			ft_putstr("pos # nb 2 :");
-			ft_putnbr(t.two.x);
-			ft_putstr(", ");
-			ft_putnbr(t.two.y);
-			ft_putstr("\npos # nb 3 :");
-			ft_putnbr(t.three.x);
-			ft_putstr(", ");
-			ft_putnbr(t.three.y);
-			ft_putstr("\npos # nb 4 :");
-			ft_putnbr(t.four.x);
-			ft_putstr(", ");
-			ft_putnbr(t.four.y);
-			ft_putstr("\n");
-			/* ####### SUPPRIMER ####### */
+			t = get_pos(input, new_tetri(), 0);
 			tetri_list_add(&tetri_list, &t);
-			(void)tetri_list;
 		}
 		else
 			close_error(fd);
@@ -71,7 +53,7 @@ int		go_through_input(char *input, char **input_array, t_tetri *tetri_list,
 	return (nb_blocks);
 }
 
-void	read_input(const char *file, t_tetri *tetri_list)
+int	read_input(const char *file, t_tetri *tetri_list)
 {
 	char	*input;
 	char	**input_array;
@@ -96,4 +78,5 @@ void	read_input(const char *file, t_tetri *tetri_list)
 	if (input_array[nb_blocks - 1][20] != '\0')
 		close_error(fd);
 	close_file(fd);
+	return (nb_blocks);
 }
