@@ -12,7 +12,7 @@
 #* ************************************************************************** *#
 
 CC = gcc
-FLAGS = -g -Wall -Wextra -Werror
+#FLAGS = -g -Wall -Wextra -Werror
 NAME = fillit
 LIBFT_DIR = libft
 SRC = allo.c assign_letters.c error.c get_pos.c insert_tetri.c main.c \

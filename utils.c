@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 16:34:57 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/20 13:40:44 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/20 15:15:07 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ t_tetri	new_tetri(void)
 	return (tetri);
 }
 
-void	tetri_list_add(t_tetri **begin_list, t_tetri *tetri)
+void	tetri_list_add(t_tetri *begin_list, t_tetri *tetri)
 {
 	t_tetri	*tmp;
 
-	tmp = *begin_list;
-	if (*begin_list)
+	tmp = begin_list;
+	if (begin_list)
 	{
 		while (tmp->next)
 			tmp = tmp->next;
