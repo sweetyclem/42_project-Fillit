@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   allo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvillepo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 16:36:59 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/17 16:41:16 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/19 17:09:59 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include "libft.h"
+#include "libft/libft.h"
 
 void	free_map(t_map *map)
 {
@@ -37,8 +37,12 @@ void	print_map(t_map *map)
 	j = 0;
 	while (i < map->size)
 	{
-		while (j++ < map->size)
+		j = 0;
+		while (j < map->size)
+		{
 			ft_putchar(map->map[i][j]);
+			j++;
+		}
 		ft_putchar('\n');
 		i++;
 	}
@@ -48,22 +52,17 @@ t_map	*map_new(int size)
 {
 	t_map	*map;
 	int		i;
-	int		j;
 
+	i = size;
 	map = (t_map *)ft_memalloc(sizeof(t_map));
 	map->size = size;
-	map->map = (char **)ft_memalloc(sizeof(char *) * size);
-	i = 0;
-	while (i < size)
+	if (!(map->map = (char **)malloc(sizeof(char *) * size)))
+		return (NULL);
+	while (i--)
 	{
-		map->map[i] = ft_strnew(size);
-		j = 0;
-		while (j < size)
-		{
-			map->map[i][j] = '.';
-			j++;
-		}
-		i++;
+		if (!(map->map[i] = (char*)malloc(sizeof(char) * size)))
+			return (NULL);
+		ft_memset(map->map[i], '.', size);
 	}
 	return (map);
 }
