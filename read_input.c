@@ -6,11 +6,24 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:37:11 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/21 12:55:18 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/21 13:19:38 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+char	*check_input(int nb_blocks, char *input, int fd, int nb_read)
+{
+	if (nb_blocks > 26)
+	close_error(fd);
+	if (nb_read != 21 && nb_read != 20)
+		close_error(fd);
+	if (nb_read == 20)
+		input[20] = '\0';
+	if (nb_read == 21 && (input[20] != '\n' && input[20] != '\0'))
+		close_error(fd);
+	return (input);
+}
 
 int		go_through_input(char *input, char **input_array,
 			t_tetri *tetri_list, int fd)
@@ -28,14 +41,7 @@ int		go_through_input(char *input, char **input_array,
 	while ((nb_read = read(fd, input, 21)) > 0)
 	{
 		nb_blocks++;
-		if (nb_blocks > 26)
-			close_error(fd);
-		if (nb_read != 21 && nb_read != 20)
-			close_error(fd);
-		if (nb_read == 20)
-			input[20] = '\0';
-		if (nb_read == 21 && (input[20] != '\n' && input[20] != '\0'))
-			close_error(fd);
+		input = check_input(nb_blocks, input, fd, nb_read);
 		input_array[j] = ft_strdup(input);
 		j++;
 		if (block_valid(input) == 1)
