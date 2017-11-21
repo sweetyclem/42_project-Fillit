@@ -52,11 +52,13 @@ $(LIBFT):
 
 clean:
 	@$(RM) -f $(OBJ)
-	@echo "clean: $(_CYAN)done$(_END)"
+	@make clean -C $(LIBFT_DIR)
+	@echo "clean fillit: $(_CYAN)done$(_END)"
 
 fclean: clean
 	@$(RM) -f $(NAME)
-	@echo "fclean: $(_CYAN)done$(_END)"
+	@make fclean -C $(LIBFT_DIR)
+	@echo "fclean fillit: $(_CYAN)done$(_END)"
 
 re: fclean all
 
