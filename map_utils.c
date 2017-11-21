@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   allo.c                                             :+:      :+:    :+:   */
+/*   map_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 16:36:59 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/21 12:57:36 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/21 13:05:18 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static int	size_map(unsigned int nb_tetri)
+static int	map_size(unsigned int nb_tetri)
 {
-	unsigned int	size_map;
+	unsigned int	map_size;
 
-	size_map = 0;
+	map_size = 0;
 	nb_tetri = nb_tetri * 4;
-	while (size_map * size_map < nb_tetri)
-		size_map++;
-	return (size_map);
+	while (map_size * map_size < nb_tetri)
+		map_size++;
+	return (map_size);
 }
 
 void		print_map(t_map *map)
@@ -80,6 +80,6 @@ t_map		*map_min(unsigned int nb_tetri)
 {
 	int		size;
 
-	size = size_map(nb_tetri);
+	size = map_size(nb_tetri);
 	return (map_new(size));
 }

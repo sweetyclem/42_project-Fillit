@@ -16,7 +16,7 @@ FLAGS = -g -Wall -Wextra -Werror
 NAME = fillit
 LIBFT_DIR = libft
 SRC = main.c read_input.c validate.c error.c get_tetri_pos.c utils.c \
-	  map.c insert_tetri.c solve.c test_connect.c
+	  map_utils.c insert_tetri.c solve.c test_connect.c
 OBJ = $(SRC:.c=.o)
 LIBFT = $(LIBFT_DIR)/libft.a
 
@@ -52,11 +52,13 @@ $(LIBFT):
 
 clean:
 	@$(RM) -f $(OBJ)
-	@echo "clean: $(_CYAN)done$(_END)"
+	@make clean -C $(LIBFT_DIR)
+	@echo "clean fillit: $(_CYAN)done$(_END)"
 
 fclean: clean
 	@$(RM) -f $(NAME)
-	@echo "fclean: $(_CYAN)done$(_END)"
+	@make fclean -C $(LIBFT_DIR)
+	@echo "fclean fillit: $(_CYAN)done$(_END)"
 
 re: fclean all
 

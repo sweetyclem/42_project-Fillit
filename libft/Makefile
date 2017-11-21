@@ -55,11 +55,9 @@ $(NAME): $(OBJ)
 
 clean:
 	@$(RM) -f $(OBJ)
-	@echo "clean: $(_CYAN)done$(_END)"
 
 fclean: clean
 	@$(RM) -f $(NAME)
-	@echo "fclean: $(_CYAN)done$(_END)"
 
 re: fclean all
 
