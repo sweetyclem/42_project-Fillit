@@ -6,7 +6,7 @@
 /*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 16:28:01 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/21 06:18:57 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/21 06:44:01 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void				affiche(t_tetri *tetri)
 	y = 0;
 	m = map_new(4);
     insert_tetri(m, tetri, &x, &y);
-	print_map(m);
 	ft_putchar('\n');
 	free_map(m);
 }
