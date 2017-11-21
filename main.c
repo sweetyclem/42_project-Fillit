@@ -6,7 +6,7 @@
 /*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:28 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/20 21:17:07 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/20 22:34:12 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,7 @@ int	main(int argc, char **argv)
 		grow_map(map);
 		print_map(map);
 		ft_putchar('\n');*/
-		/*while(tetri_list)
-		{
-			affiche(tetri_list);
-			ft_putchar('\n');
-			tetri_list = tetri_list->next;
-		}*/
+
 		map = solve(tetri_list, nb_tetri);
 		//printf("solution : \n");
 		//print_map(map);	

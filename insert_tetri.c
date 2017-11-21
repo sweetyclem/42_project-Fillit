@@ -6,7 +6,7 @@
 /*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 16:28:01 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/20 22:07:32 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/21 06:18:57 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,8 @@ static unsigned int	insert_tetri_0(t_map *m, t_tetri *tetri)
 	return (1);
 }
 
-void				affiche(t_tetri *tetri)
-{
-	t_map *m;
 
-	m = map_min(4);
-    insert_tetri_0(m, tetri);
-	print_map(m);
-	ft_putchar('\n');
-	free_map(m);
-}
-
-static unsigned int	insert_tetri_pos(t_map *m, t_tetri *tetri,unsigned int x, unsigned int y)
+static unsigned int	insert_tetri_pos(t_map *m, t_tetri *tetri,unsigned int y, unsigned int x)
 {
 	if(m->map[x][y] != '.')
 		return (0);
@@ -54,7 +44,6 @@ static unsigned int	insert_tetri_pos(t_map *m, t_tetri *tetri,unsigned int x, un
 
 unsigned int		insert_tetri(t_map *map, t_tetri *tetri, int *x, int *y)
 {
-
 	while (*y < map->size)
 	{	
 		while (*x < map->size)
@@ -69,7 +58,21 @@ unsigned int		insert_tetri(t_map *map, t_tetri *tetri, int *x, int *y)
 	return (0);
 }
 
-void			retire_tetri(t_map *m, t_tetri *tetri, int x, int y)
+void				affiche(t_tetri *tetri)
+{
+	t_map *m;
+	int		x;
+	int		y;
+
+	x = 0;
+	y = 0;
+	m = map_new(4);
+    insert_tetri(m, tetri, &x, &y);
+	print_map(m);
+	ft_putchar('\n');
+	free_map(m);
+}
+void			retire_tetri(t_map *m, t_tetri *tetri, int y, int x)
 {
 	m->map[x][y] = '.';
 	m->map[x+tetri->two.x][y+tetri->two.y] = '.';
