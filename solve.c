@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   solve.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 16:14:42 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/21 11:07:34 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/21 13:47:46 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_map			*solve(t_tetri *ltetri, unsigned int nb_tetri)
 	t_map	*m;
 	int		m_size;
 
-	m = map_min(nb_tetri);
+	m = create_map_min(nb_tetri);
 	m_size = m->size;
 	while (!(m = solve_map(m, ltetri)))
 	{

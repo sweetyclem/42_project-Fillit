@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 16:36:59 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/21 13:05:18 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/21 13:47:46 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ t_map		*map_new(int size)
 	return (map);
 }
 
-t_map		*map_min(unsigned int nb_tetri)
+t_map		*create_map_min(unsigned int nb_tetri)
 {
 	int		size;
 

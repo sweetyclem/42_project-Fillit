@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_connect.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/21 08:25:31 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/21 11:16:36 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/21 13:41:31 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,13 @@ static int	connect(t_tetri t)
 	return (0);
 }
 
-int			tetri_connect(t_tetri *l_tetri)
+int			tetri_connect(t_tetri *tetri_list)
 {
-	while (l_tetri)
+	while (tetri_list)
 	{
-		if (!connect(*l_tetri))
+		if (!connect(*tetri_list))
 			return (0);
-		l_tetri = l_tetri->next;
+		tetri_list = tetri_list->next;
 	}
 	return (1);
 }

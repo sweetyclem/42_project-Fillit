@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:43 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/21 13:23:42 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/21 13:47:46 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ unsigned int			insert_tetri(t_map *map, t_tetri *t, int *x, int *y);
 void					retire_tetri(t_map *m, t_tetri *tetri, int x, int y);
 void					free_map(t_map *map);
 void					print_map(t_map *map);
-t_map					*map_min(unsigned int nb_tetri);
+t_map					*create_map_min(unsigned int nb_tetri);
 t_map					*solve(t_tetri *ltetri, unsigned int nb_tetri);
 void					affiche(t_tetri *tetri);
 void					grow_map(t_map **map);
