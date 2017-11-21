@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:37:11 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/21 07:37:00 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/21 11:48:18 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,11 @@ int		read_input(const char *file, t_tetri *tetri_list)
 		input_array[i] = ft_strnew(21);
 		i++;
 	}
-	
 	if ((fd = open(file, O_RDONLY)) == -1)
 		close_error(fd);
 	nb_blocks = go_through_input(input, input_array, tetri_list, fd);
+	if (nb_blocks == 0)
+		close_error(fd);
 	if (input_array[nb_blocks - 1][20] != '\0')
 		close_error(fd);
 	close_file(fd);
