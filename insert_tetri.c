@@ -6,7 +6,7 @@
 /*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 16:28:01 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/21 06:44:01 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/21 11:24:23 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,24 @@ static unsigned int	insert_tetri_0(t_map *m, t_tetri *tetri)
 	return (1);
 }
 
-
-static unsigned int	insert_tetri_pos(t_map *m, t_tetri *tetri,unsigned int y, unsigned int x)
+static unsigned int	insert_tetri_pos(t_map *m, t_tetri *tetri,
+		unsigned int y, unsigned int x)
 {
-	if(m->map[x][y] != '.')
+	if (m->map[x][y] != '.')
 		return (0);
-	if(x + tetri->two.x >= m->size || y + tetri->two.y >= m->size ||
+	if (x + tetri->two.x >= m->size || y + tetri->two.y >= m->size ||
 			m->map[x + tetri->two.x][y + tetri->two.y] != '.')
 		return (0);
-	if(x + tetri->three.x >= m->size || y + tetri->three.y >= m->size ||
+	if (x + tetri->three.x >= m->size || y + tetri->three.y >= m->size ||
 			m->map[x + tetri->three.x][y + tetri->three.y] != '.')
 		return (0);
-	if(x + tetri->four.x >= m->size || y + tetri->four.y >= m->size ||
+	if (x + tetri->four.x >= m->size || y + tetri->four.y >= m->size ||
 			m->map[x + tetri->four.x][y + tetri->four.y] != '.')
 		return (0);
 	m->map[x][y] = tetri->letter;
-	m->map[x+tetri->two.x][y+tetri->two.y] = tetri->letter;
-	m->map[x+tetri->three.x][y+tetri->three.y] = tetri->letter;
-	m->map[x+tetri->four.x][y+tetri->four.y] = tetri->letter;
+	m->map[x + tetri->two.x][y + tetri->two.y] = tetri->letter;
+	m->map[x + tetri->three.x][y + tetri->three.y] = tetri->letter;
+	m->map[x + tetri->four.x][y + tetri->four.y] = tetri->letter;
 	return (1);
 }
 
@@ -71,7 +71,8 @@ void				affiche(t_tetri *tetri)
 	ft_putchar('\n');
 	free_map(m);
 }
-void			retire_tetri(t_map *m, t_tetri *tetri, int y, int x)
+
+void				retire_tetri(t_map *m, t_tetri *tetri, int y, int x)
 {
 	m->map[x][y] = '.';
 	m->map[x+tetri->two.x][y+tetri->two.y] = '.';

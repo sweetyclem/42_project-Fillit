@@ -6,7 +6,7 @@
 /*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 16:34:57 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/19 16:01:45 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/21 11:07:57 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_tetri	*new_tetri(void)
 {
 	t_tetri *tetri;
 
-	if(!(tetri = (t_tetri*)malloc(sizeof(*tetri))))
+	if (!(tetri = (t_tetri*)malloc(sizeof(*tetri))))
 		return (NULL);
 	tetri->letter = 0;
 	tetri->next = NULL;

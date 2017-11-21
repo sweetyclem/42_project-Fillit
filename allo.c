@@ -6,7 +6,7 @@
 /*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 16:36:59 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/20 22:05:03 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/21 11:01:41 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ static int	size_map(unsigned int nb_tetri)
 	size_map = 0;
 	nb_tetri = nb_tetri * 4;
 	while (size_map * size_map < nb_tetri)
-		size_map++;;
-	return(size_map);
+		size_map++;
+	return (size_map);
 }
 
-void	print_map(t_map *map)
+void		print_map(t_map *map)
 {
 	int i;
 	int	j;
@@ -44,7 +44,7 @@ void	print_map(t_map *map)
 	}
 }
 
-void	free_map(t_map *map)
+void		free_map(t_map *map)
 {
 	int i;
 
@@ -58,7 +58,7 @@ void	free_map(t_map *map)
 	ft_memdel((void **)&map);
 }
 
-t_map	*map_new(int size)
+t_map		*map_new(int size)
 {
 	t_map	*map;
 	int		i;
@@ -77,19 +77,10 @@ t_map	*map_new(int size)
 	return (map);
 }
 
-t_map					*map_min(unsigned int nb_tetri)
+t_map		*map_min(unsigned int nb_tetri)
 {
 	int		size;
 
 	size = size_map(nb_tetri);
 	return (map_new(size));
-}
-
-void					grow_map(t_map **map)
-{
-	int		size;
-
-	size = (*map)->size;
-	free_map(*map);
-	*map = map_new(size + 1);
 }
