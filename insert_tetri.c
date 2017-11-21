@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 16:28:01 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/21 13:23:58 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/21 13:34:55 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,20 +47,6 @@ unsigned int		insert_tetri(t_map *map, t_tetri *t, int *x, int *y)
 		*x = 0;
 	}
 	return (0);
-}
-
-void				affiche(t_tetri *tetri)
-{
-	t_map	*m;
-	int		x;
-	int		y;
-
-	x = 0;
-	y = 0;
-	m = map_new(4);
-	insert_tetri(m, tetri, &x, &y);
-	ft_putchar('\n');
-	free_map(m);
 }
 
 void				retire_tetri(t_map *m, t_tetri *tetri, int y, int x)
