@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:56 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/21 08:47:04 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/21 13:20:09 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,10 @@ static int	is_pound(char *block, int pos)
 	return (0);
 }
 
-int			check_other_pounds(char *block, int i, int nb_pounds)
+int			count_pounds(char *block, int i, int nb_pounds)
 {
 	if (is_pound(block, i))
-	{
 		nb_pounds++;
-		if (!is_pound(block, i + 1) && !is_pound(block, i + 5) &&
-			!is_pound(block, i - 1) && !is_pound(block, i - 5))
-			return (-1);
-	}
 	return (nb_pounds);
 }
 
@@ -52,7 +47,7 @@ int			block_valid(char *block)
 		}
 		if ((i + 1) % 5 != 0 && (block[i] != '.' && block[i] != '#'))
 			return (0);
-		nb_pounds = check_other_pounds(block, i, nb_pounds);
+		nb_pounds = count_pounds(block, i, nb_pounds);
 	}
 	if (nb_pounds != 4)
 		return (0);
