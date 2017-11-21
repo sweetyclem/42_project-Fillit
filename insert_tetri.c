@@ -6,23 +6,14 @@
 /*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 16:28:01 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/21 11:24:23 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/21 12:42:35 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static unsigned int	insert_tetri_0(t_map *m, t_tetri *tetri)
-{
-	m->map[0][0] = tetri->letter;
-	m->map[tetri->two.x][tetri->two.y] = tetri->letter;
-	m->map[tetri->three.x][tetri->three.y] = tetri->letter;
-	m->map[tetri->four.x][tetri->four.y] = tetri->letter;
-	return (1);
-}
-
 static unsigned int	insert_tetri_pos(t_map *m, t_tetri *tetri,
-		unsigned int y, unsigned int x)
+		int y, int x)
 {
 	if (m->map[x][y] != '.')
 		return (0);
@@ -45,10 +36,10 @@ static unsigned int	insert_tetri_pos(t_map *m, t_tetri *tetri,
 unsigned int		insert_tetri(t_map *map, t_tetri *tetri, int *x, int *y)
 {
 	while (*y < map->size)
-	{	
+	{
 		while (*x < map->size)
 		{
-			if(insert_tetri_pos(map, tetri, *x, *y))
+			if (insert_tetri_pos(map, tetri, *x, *y))
 				return (1);
 			(*x)++;
 		}
@@ -60,14 +51,14 @@ unsigned int		insert_tetri(t_map *map, t_tetri *tetri, int *x, int *y)
 
 void				affiche(t_tetri *tetri)
 {
-	t_map *m;
+	t_map	*m;
 	int		x;
 	int		y;
 
 	x = 0;
 	y = 0;
 	m = map_new(4);
-    insert_tetri(m, tetri, &x, &y);
+	insert_tetri(m, tetri, &x, &y);
 	ft_putchar('\n');
 	free_map(m);
 }
@@ -75,7 +66,7 @@ void				affiche(t_tetri *tetri)
 void				retire_tetri(t_map *m, t_tetri *tetri, int y, int x)
 {
 	m->map[x][y] = '.';
-	m->map[x+tetri->two.x][y+tetri->two.y] = '.';
-	m->map[x+tetri->three.x][y+tetri->three.y] = '.';
-	m->map[x+tetri->four.x][y+tetri->four.y] = '.';
+	m->map[x + tetri->two.x][y + tetri->two.y] = '.';
+	m->map[x + tetri->three.x][y + tetri->three.y] = '.';
+	m->map[x + tetri->four.x][y + tetri->four.y] = '.';
 }

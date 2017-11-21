@@ -6,19 +6,20 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:37:11 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/21 11:48:18 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/21 12:55:18 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-int 	go_through_input(char	*input, char **input_array, t_tetri *tetri_list,
-	int fd)
+
+int		go_through_input(char *input, char **input_array,
+			t_tetri *tetri_list, int fd)
 {
 	int		nb_blocks;
 	int		nb_read;
 	int		i;
-	int 	j;
-	t_tetri	*t = NULL;
+	int		j;
+	t_tetri	*t;
 
 	i = 0;
 	j = 0;
@@ -39,7 +40,7 @@ int 	go_through_input(char	*input, char **input_array, t_tetri *tetri_list,
 		j++;
 		if (block_valid(input) == 1)
 		{
-			t = get_tetri_pos(input, new_tetri(), 0);			
+			t = get_tetri_pos(input, new_tetri(), 0);
 			t->letter = 'A' + nb_blocks - 1;
 			tetri_list_add(&tetri_list, t);
 			i++;
@@ -59,10 +60,8 @@ int		read_input(const char *file, t_tetri *tetri_list)
 	int		fd;
 
 	i = 0;
-
-	if(!(input = ft_strnew(21)))
+	if (!(input = ft_strnew(21)))
 		return (0);
-		
 	if (!(input_array = (char **)malloc(sizeof(char*) * 26)))
 		error();
 	while (i < 26)

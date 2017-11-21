@@ -12,7 +12,7 @@
 #* ************************************************************************** *#
 
 CC = gcc
-#FLAGS = -g -Wall -Wextra 
+FLAGS = -g -Wall -Wextra -Werror 
 NAME = fillit
 LIBFT_DIR = libft
 SRC = main.c read_input.c validate.c error.c get_tetri_pos.c utils.c \
@@ -41,7 +41,7 @@ all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJ)
 	@echo "\n$(NAME) compilation : $(_CYAN)done$(_END)"
-	@$(CC) -o $(NAME) $(OBJ) -L$(LIBFT_DIR) -lft
+	@$(CC) $(FLAGS) -o $(NAME) $(OBJ) -L$(LIBFT_DIR) -lft
 
 %.o: %.c
 	@printf "%-60b\r" "$(ECHO) $(_CYAN) Compiling $@ $(_END)"
@@ -53,7 +53,6 @@ $(LIBFT):
 clean:
 	@$(RM) -f $(OBJ)
 	@echo "clean: $(_CYAN)done$(_END)"
-	@make fclean -C $(LIBFT_DIR)
 
 fclean: clean
 	@$(RM) -f $(NAME)
