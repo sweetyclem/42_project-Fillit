@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:56 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/21 07:31:23 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/21 07:39:57 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ int			block_valid(char *block)
 		return (0);
 	while (++i < 20)
 	{
-		ft_putnbrendl(i);
-		ft_putchar(block[i]);
 		if ((i + 1) % 5 == 0)
 		{
 			if (block[i] != '\n')
