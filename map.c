@@ -6,12 +6,11 @@
 /*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/17 16:36:59 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/21 11:01:41 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/21 12:57:36 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include "libft/libft.h"
 
 static int	size_map(unsigned int nb_tetri)
 {
