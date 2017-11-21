@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   insert_tetri.c                                     :+:      :+:    :+:   */
+/*   tetri_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 16:28:01 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/21 13:34:55 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/21 14:02:27 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static unsigned int	insert_tetri_pos(t_map *m, t_tetri *tetri,
+static unsigned int	insert_if_possible(t_map *m, t_tetri *tetri,
 		int y, int x)
 {
 	if (m->map[x][y] != '.')
@@ -39,7 +39,7 @@ unsigned int		insert_tetri(t_map *map, t_tetri *t, int *x, int *y)
 	{
 		while (*x < map->size)
 		{
-			if (insert_tetri_pos(map, t, *x, *y))
+			if (insert_if_possible(map, t, *x, *y))
 				return (1);
 			(*x)++;
 		}
@@ -49,7 +49,7 @@ unsigned int		insert_tetri(t_map *map, t_tetri *t, int *x, int *y)
 	return (0);
 }
 
-void				retire_tetri(t_map *m, t_tetri *tetri, int y, int x)
+void				remove_tetri(t_map *m, t_tetri *tetri, int y, int x)
 {
 	m->map[x][y] = '.';
 	m->map[x + tetri->two.x][y + tetri->two.y] = '.';
