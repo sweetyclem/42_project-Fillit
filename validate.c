@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:56 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/21 07:39:57 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/21 07:49:29 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int			block_valid(char *block)
 				return (0);
 		}
 	}
-	if (nb_pounds > 4)
+	if (nb_pounds != 4)
 		return (0);
 	return (nb_lines != 4 ? 0 : 1);
 }
