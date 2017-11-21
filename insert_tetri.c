@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   insert_tetri.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/19 16:28:01 by yvillepo          #+#    #+#             */
-/*   Updated: 2017/11/21 12:42:35 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/21 13:23:58 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ static unsigned int	insert_tetri_pos(t_map *m, t_tetri *tetri,
 	return (1);
 }
 
-unsigned int		insert_tetri(t_map *map, t_tetri *tetri, int *x, int *y)
+unsigned int		insert_tetri(t_map *map, t_tetri *t, int *x, int *y)
 {
 	while (*y < map->size)
 	{
 		while (*x < map->size)
 		{
-			if (insert_tetri_pos(map, tetri, *x, *y))
+			if (insert_tetri_pos(map, t, *x, *y))
 				return (1);
 			(*x)++;
 		}
