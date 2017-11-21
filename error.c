@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/06 08:15:27 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/17 11:09:48 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/21 07:43:25 by cpirlot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	error(void)
 {
-	ft_puterror("error");
-	ft_puterror("\n");
+	ft_putstr("error");
+	ft_putstr("\n");
 }
 
 void	close_file(int fd)
