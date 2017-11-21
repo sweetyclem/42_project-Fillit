@@ -16,7 +16,7 @@ CC = gcc
 NAME = fillit
 LIBFT_DIR = libft
 SRC = main.c read_input.c validate.c error.c get_tetri_pos.c utils.c \
-	  allo.c insert_tetri.c solve.c
+	  allo.c insert_tetri.c solve.c test_connect.c
 OBJ = $(SRC:.c=.o)
 LIBFT = $(LIBFT_DIR)/libft.a
 

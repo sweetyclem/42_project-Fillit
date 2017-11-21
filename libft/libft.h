@@ -6,7 +6,7 @@
 /*   By: cpirlot <cpirlot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:47:49 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/14 11:32:04 by cpirlot          ###   ########.fr       */
+/*   Updated: 2017/11/21 08:43:45 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void			ft_putnbrendl(int nbr);
 char			*ft_strrev(char *str);
 const char		*ft_skip_whitespace(const char *str);
 bool			ft_is_space(char c);
+int				ft_abs(int a);
 
 typedef	struct	s_list
 {

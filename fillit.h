@@ -6,7 +6,7 @@
 /*   By: yvillepo <yvillepo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 09:36:43 by cpirlot           #+#    #+#             */
-/*   Updated: 2017/11/20 22:05:14 by yvillepo         ###   ########.fr       */
+/*   Updated: 2017/11/21 08:38:50 by yvillepo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,5 @@ t_map					*solve(t_tetri *ltetri, unsigned int nb_tetri);
 void					affiche(t_tetri *tetri);
 void					grow_map(t_map **map);
 t_map					*map_new(int size);
+int						tetri_connect(t_tetri *l_tetri);
 #endif
